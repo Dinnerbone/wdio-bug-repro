@@ -6,12 +6,8 @@ describe('Javascript execution', () => {
         await browser.url(`https://www.example.org/`);
 
         const result = await browser.execute(() => {
-            const foo = {
-                method: function() {
-                    return "Success!";
-                }
-            };
-            return foo.method();
+            function fn() {}
+            return "Success!";
         });
 
         assert.equal(result, "Success!");
